@@ -39,32 +39,18 @@ export type Curso = {
 export const cursos: Curso[] = [
   {
     nome: "Técnico em Enfermagem",
-    turno: "Matutino",
+    turno: "Turmas Matutino e Noturno",
     descricao:
-      "Forme-se em uma das profissões que mais contratam na saúde, com aulas práticas em laboratório.",
-    imagem: "/img/profissional-enfermagem-1.jpg",
+      "Forme-se em uma das profissões que mais contratam na saúde, com aulas práticas em laboratório. Escolha a turma que cabe na sua rotina.",
+    imagem: "/img/tecnica-enfermagem.jpg",
     destaque: true,
-  },
-  {
-    nome: "Técnico em Enfermagem",
-    turno: "Noturno",
-    descricao:
-      "A mesma formação completa em horário que cabe na sua rotina de trabalho.",
-    imagem: "/img/afericao-pressao.jpg",
-  },
-  {
-    nome: "Técnico em Enfermagem",
-    turno: "Noturno · Turma 2",
-    descricao:
-      "Turma extra aberta por alta procura. Garanta sua vaga antes de esgotar.",
-    imagem: "/img/profissional-enfermagem-2.jpg",
   },
   {
     nome: "Técnico em Farmácia",
     turno: "Noturno",
     descricao:
       "Atue em farmácias, drogarias, indústria e laboratórios com uma formação valorizada pelo mercado.",
-    imagem: "/img/laboratorio-banco-sangue.jpg",
+    imagem: "/img/estudante-farmacia.jpg",
   },
 ];
 
@@ -122,8 +108,12 @@ export const stats: { numero: string; rotulo: string }[] = [
   { numero: "100%", rotulo: "foco no mercado" },
 ];
 
-// Lista de opções do <select> do formulário
-export const opcoesCurso = cursos.map((c) => `${c.nome} — ${c.turno}`);
+// Lista de opções do <select> do formulário (turmas matriculáveis)
+export const opcoesCurso = [
+  "Técnico em Enfermagem — Matutino",
+  "Técnico em Enfermagem — Noturno",
+  "Técnico em Farmácia — Noturno",
+];
 
 // Textos das seções (a mesma estrutura é usada nas duas LPs)
 export const copy = {
