@@ -34,6 +34,8 @@ export type Curso = {
   descricao: string;
   imagem: string;
   destaque?: boolean;
+  /** Classe Tailwind de object-position p/ enquadrar a foto (ex.: "object-top"). */
+  pos?: string;
 };
 
 export const cursos: Curso[] = [
@@ -42,7 +44,8 @@ export const cursos: Curso[] = [
     turno: "Turmas Matutino e Noturno",
     descricao:
       "Forme-se em uma das profissões que mais contratam na saúde, com aulas práticas em laboratório. Escolha a turma que cabe na sua rotina.",
-    imagem: "/img/tecnica-enfermagem.jpg",
+    imagem: "/img/enfermagem-estetoscopio.jpg",
+    pos: "object-top",
     destaque: true,
   },
   {

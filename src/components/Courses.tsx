@@ -2,7 +2,7 @@ import { copy, cursos } from "../config";
 import { scrollToId } from "../lib/links";
 import { Icon } from "./Icons";
 
-type CursoLike = (typeof cursos)[number] & { tag?: string };
+type CursoLike = (typeof cursos)[number] & { tag?: string; pos?: string };
 
 export function Courses() {
   const s = copy.cursosSecao;
@@ -32,7 +32,7 @@ export function Courses() {
                   <img
                     src={c.imagem}
                     alt={c.nome}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className={`h-full w-full object-cover ${c.pos ?? "object-center"} transition-transform duration-700 group-hover:scale-105`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy-800/85 via-navy-800/15 to-transparent" />
                   {c.destaque && (
@@ -79,7 +79,7 @@ export function Courses() {
                   <img
                     src={c.imagem}
                     alt={c.nome}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className={`h-full w-full object-cover ${c.pos ?? "object-center"} transition-transform duration-500 group-hover:scale-105`}
                   />
                   {c.destaque && (
                     <span className="absolute left-3 top-3 rounded-full bg-orange px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-white shadow-glow">
