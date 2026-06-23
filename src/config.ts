@@ -45,7 +45,7 @@ export const cursos: Curso[] = [
     descricao:
       "Forme-se em uma das profissões que mais contratam na saúde, com aulas práticas em laboratório. Escolha a turma que cabe na sua rotina.",
     imagem: "/img/enfermagem-estetoscopio.jpg",
-    pos: "object-top",
+    pos: "object-[center_25%]",
     destaque: true,
   },
   {
