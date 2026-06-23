@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-white text-navy-800 font-sans antialiased;
+    overflow-x: hidden;
+  }
+  ::selection {
+    @apply bg-orange text-white;
+  }
+}
+
+@layer components {
+  .container-lp {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-orange px-7 py-4
+      text-base font-bold text-white shadow-glow transition-all duration-300
+      hover:bg-orange-600 hover:-translate-y-0.5 active:translate-y-0;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/70
+      px-7 py-4 text-base font-bold text-white transition-all duration-300
+      hover:bg-white hover:text-navy;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full bg-orange/10 px-4 py-1.5
+      text-xs font-bold uppercase tracking-wider text-orange-600;
+  }
+}
+
+/* Scroll-reveal: hidden until .is-visible toggled by IntersectionObserver */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* gradient text helper */
+.text-gradient {
+  background: linear-gradient(100deg, #d65133 0%, #f0855f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+@layer components {
+  .input {
+    @apply w-full rounded-xl border border-navy-100 bg-navy-50/40 px-4 py-3 text-navy-800
+      outline-none transition-all duration-200 placeholder:text-navy-300
+      focus:border-orange focus:bg-white focus:ring-4 focus:ring-orange/15;
+  }
+}
